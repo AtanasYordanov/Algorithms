@@ -9,7 +9,6 @@ public class Needles {
         BufferedReader reader = new BufferedReader(new InputStreamReader(System.in));
         String[] tokens = reader.readLine().split(" ");
         int c = Integer.parseInt(tokens[0]);
-        int n = Integer.parseInt(tokens[1]);
         tokens = reader.readLine().split(" ");
         int[] array = parseInput(tokens);
         tokens = reader.readLine().split(" ");
