@@ -29,17 +29,17 @@ public class TowerOfHanoi {
         }
     }
 
-    private static void moveDisks(int bottomDisk, Deque<Integer> sourse, Deque<Integer> destination, Deque<Integer> spare) {
+    private static void moveDisks(int bottomDisk, Deque<Integer> source, Deque<Integer> destination, Deque<Integer> spare) {
         if (bottomDisk == 1) {
-            destination.push(sourse.pop());
+            destination.push(source.pop());
             output.append("Step #").append(++steps).append(": Moved disk").append(System.lineSeparator());
             appendInfo();
         } else {
-            moveDisks(bottomDisk - 1, sourse, spare, destination);
-            destination.push(sourse.pop());
+            moveDisks(bottomDisk - 1, source, spare, destination);
+            destination.push(source.pop());
             output.append("Step #").append(++steps).append(": Moved disk").append(System.lineSeparator());
             appendInfo();
-            moveDisks(bottomDisk - 1, spare, destination, sourse);
+            moveDisks(bottomDisk - 1, spare, destination, source);
         }
     }
 
