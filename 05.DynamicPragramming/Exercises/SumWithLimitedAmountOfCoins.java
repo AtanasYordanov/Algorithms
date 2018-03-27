@@ -12,7 +12,6 @@ public class SumWithLimitedAmountOfCoins {
     private static int count;
     private static int neededSum;
     private static int[] vector;
-
     private static Set<String> combinations = new HashSet<>();
 
     public static void main(String[] args) throws IOException {
