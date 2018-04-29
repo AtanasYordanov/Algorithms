@@ -8,7 +8,7 @@ import java.util.Deque;
 
 public class ZigZagMatrix {
 
-    // 25/100 in Judge but works correctly as opposed to the author solution
+    // 25/100 in Judge but works correctly as opposed to the author's solution
 
     private static int[][] matrix;
     private static int[][] evenUpMatrix;
@@ -144,6 +144,3 @@ public class ZigZagMatrix {
         return max;
     }
 }
-
-
-
