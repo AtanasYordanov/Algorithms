@@ -1,4 +1,4 @@
-package ProblemSolvingMethodology2.Lab;
+package SolvingPracticalProblems2.Lab;
 
 import java.io.BufferedReader;
 import java.io.IOException;
