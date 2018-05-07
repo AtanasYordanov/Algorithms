@@ -13,7 +13,7 @@ public class Renewal {
     public static void main(String[] args) throws IOException {
         initializeGraphs();
         Set<Edge> edges = getEdges();
-        int totalCost = kruskal(graph.length, edges);
+        int totalCost = kruskal(n, edges);
         System.out.println(totalCost);
     }
 
