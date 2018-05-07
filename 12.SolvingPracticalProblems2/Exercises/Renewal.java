@@ -6,7 +6,6 @@ import java.io.InputStreamReader;
 import java.util.*;
 
 public class Renewal {
-
     private static int[][] graph;
     private static int[][] buildCosts;
     private static int[][] destroyCosts;
