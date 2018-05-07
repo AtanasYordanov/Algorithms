@@ -6,7 +6,6 @@ import java.io.InputStreamReader;
 import java.util.*;
 
 public class Renewal {
-
     private static int[][] graph;
     private static int[][] buildCosts;
     private static int[][] destroyCosts;
@@ -86,7 +85,7 @@ public class Renewal {
     private static int convertChar(String token) {
         char ch = token.charAt(0);
         int cost;
-        if (ch >= 'A' && ch <= 'Z') {
+        if (Character.isUpperCase(ch)) {
             cost = ch - 'A';
         } else {
             cost = ch - 'a' + 26;
