@@ -12,12 +12,7 @@ public class Renewal {
     private static int[][] destroyCosts;
 
     public static void main(String[] args) throws IOException {
-        BufferedReader reader = new BufferedReader(new InputStreamReader(System.in));
-        int n = Integer.parseInt(reader.readLine());
-        graph = new int[n][n];
-        buildCosts = new int[n][n];
-        destroyCosts = new int[n][n];
-        initializeGraphs(reader, n);
+        initializeGraphs();
         Set<Edge> edges = getEdges();
         int totalCost = kruskal(graph.length, edges);
         System.out.println(totalCost);
@@ -60,7 +55,12 @@ public class Renewal {
         return root;
     }
 
-    private static void initializeGraphs(BufferedReader reader, int n) throws IOException {
+    private static void initializeGraphs() throws IOException {
+        BufferedReader reader = new BufferedReader(new InputStreamReader(System.in));
+        int n = Integer.parseInt(reader.readLine());
+        graph = new int[n][n];
+        buildCosts = new int[n][n];
+        destroyCosts = new int[n][n];
         for (int i = 0; i < n; i++) {
             String[] tokens = reader.readLine().split("");
             for (int j = 0; j < n; j++) {
