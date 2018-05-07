@@ -19,7 +19,7 @@ public class Renewal {
         destroyCosts = new int[n][n];
         initializeGraphs(reader, n);
         Set<Edge> edges = getEdges();
-        int totalCost = kruskal(graph.length, edges);
+        int totalCost = kruskal(n, edges);
         System.out.println(totalCost);
     }
 
