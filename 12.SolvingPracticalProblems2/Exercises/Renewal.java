@@ -6,6 +6,7 @@ import java.io.InputStreamReader;
 import java.util.*;
 
 public class Renewal {
+
     private static int[][] graph;
     private static int[][] buildCosts;
     private static int[][] destroyCosts;
@@ -13,14 +14,14 @@ public class Renewal {
     public static void main(String[] args) throws IOException {
         initializeGraphs();
         Set<Edge> edges = getEdges();
-        int totalCost = kruskal(graph.length, edges);
+        int totalCost = kruskal(edges);
         System.out.println(totalCost);
     }
 
-    private static int kruskal(int numberOfVertices, Set<Edge> edges) {
+    private static int kruskal(Set<Edge> edges) {
         int totalCost = 0;
-        int[] parent = new int[numberOfVertices];
-        for (int i = 0; i < numberOfVertices; i++) {
+        int[] parent = new int[graph.length];
+        for (int i = 0; i < graph.length; i++) {
             parent[i] = i;
         }
         for (Edge edge : edges) {
