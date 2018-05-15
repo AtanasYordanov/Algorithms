@@ -55,14 +55,13 @@ public class Shelter {
         return bestTime;
     }
 
-    static int dinicMaxFlow(int source, int destination) {
+    private static int dinicMaxFlow(int source, int destination) {
         buildGraph();
         int result = 0;
         while (BFS(source, destination)) {
             for (int i = 0; i < childCounter.length; i++) {
                 childCounter[i] = 0;
             }
-
             int delta;
             do {
                 delta = DFS(source, Integer.MAX_VALUE);
@@ -73,7 +72,7 @@ public class Shelter {
         return result;
     }
 
-    static boolean BFS(int source, int destination) {
+    private static boolean BFS(int source, int destination) {
         for (int i = 0; i < levels.length; i++) {
             levels[i] = -1;
         }
@@ -93,7 +92,7 @@ public class Shelter {
         return levels[destination] >= 0;
     }
 
-    static int DFS(int source, int flow) {
+    private static int DFS(int source, int flow) {
         if (source == sink) {
             return flow;
         }
