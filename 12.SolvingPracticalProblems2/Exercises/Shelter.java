@@ -66,8 +66,7 @@ public class Shelter {
             do {
                 delta = DFS(source, Integer.MAX_VALUE);
                 result += delta;
-            }
-            while (delta != 0);
+            } while (delta != 0);
         }
         return result;
     }
