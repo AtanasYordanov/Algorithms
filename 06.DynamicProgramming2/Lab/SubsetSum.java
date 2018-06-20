@@ -24,12 +24,12 @@ public class SubsetSum {
     private static Map<Integer, Integer> calcPossibleSums() {
         Map<Integer, Integer> possibleSums = new HashMap<>();
         possibleSums.put(0, 0);
-        for (int i = 0; i < nums.length; i++) {
+        for (int num : nums) {
             Map<Integer, Integer> tempSet = new HashMap<>();
             for (Map.Entry<Integer, Integer> sum : possibleSums.entrySet()) {
-                int currentSum = sum.getKey() + nums[i];
+                int currentSum = sum.getKey() + num;
                 if (!possibleSums.containsKey(currentSum)) {
-                    tempSet.put(currentSum, nums[i]);
+                    tempSet.put(currentSum, num);
                 }
             }
             for (Map.Entry<Integer, Integer> tempPair : tempSet.entrySet()) {

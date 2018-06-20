@@ -7,13 +7,17 @@ import java.util.HashSet;
 import java.util.Set;
 
 public class PermutationsWithRepetition {
+
+    private static String[] elements;
+
     public static void main(String[] args) throws IOException {
         BufferedReader reader = new BufferedReader(new InputStreamReader(System.in));
-        String[] elements = reader.readLine().split(" ");
-        generateRecursive(elements, 0);
+        elements = reader.readLine().split(" ");
+        //generateRecursive(0);
+        generateIterative();
     }
 
-    private static void generateIterative(String[] elements) {
+    private static void generateIterative() {
         int length = elements.length;
         int[] controlArray = new int[length + 1];
         for (int i = 0; i < controlArray.length; i++) {
@@ -29,7 +33,7 @@ public class PermutationsWithRepetition {
             } else {
                 j = 0;
             }
-            swap(elements, j, i);
+            swap(j, i);
             System.out.println(String.join(" ", elements));
             i = 1;
             while (controlArray[i] == 0) {
@@ -39,7 +43,7 @@ public class PermutationsWithRepetition {
         }
     }
 
-    private static void generateRecursive(String[] elements, int index) {
+    private static void generateRecursive(int index) {
         if (index == elements.length) {
             System.out.println(String.join(" ", elements));
             return;
@@ -47,15 +51,15 @@ public class PermutationsWithRepetition {
         Set<String> used = new HashSet<>();
         for (int i = index; i < elements.length; i++) {
             if (!used.contains(elements[i])) {
-                swap(elements, index, i);
-                generateRecursive(elements, index + 1);
-                swap(elements, index, i);
+                swap(index, i);
+                generateRecursive(index + 1);
+                swap(index, i);
                 used.add(elements[i]);
             }
         }
     }
 
-    private static void swap(String[] elements, int i, int j) {
+    private static void swap(int i, int j) {
         String temp = elements[i];
         elements[i] = elements[j];
         elements[j] = temp;

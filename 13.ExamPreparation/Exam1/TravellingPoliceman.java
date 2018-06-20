@@ -22,9 +22,8 @@ public class TravellingPoliceman {
     }
 
     private static void addStreets(BufferedReader reader) throws IOException {
-        String input;
-        while (!"End".equals(input = reader.readLine())) {
-            String[] tokens = input.split(", ");
+        for (String line = reader.readLine(); !line.equals("End"); line = reader.readLine()) {
+            String[] tokens = line.split(", ");
             String name = tokens[0];
             int carDamage = Integer.parseInt(tokens[1]);
             int pokemonsCount = Integer.parseInt(tokens[2]);
@@ -88,44 +87,45 @@ public class TravellingPoliceman {
         }
         return visitedStreets;
     }
+
+    private static class Street {
+        private String name;
+        private int pokemonsCount;
+        private int carDamage;
+        private int value;
+        private int length;
+
+        Street(String name, int carDamage, int pokemonsCount, int length) {
+            this.name = name;
+            this.pokemonsCount = pokemonsCount;
+            this.carDamage = carDamage;
+            this.length = length;
+            this.setValue();
+        }
+
+        private void setValue() {
+            this.value = this.pokemonsCount * 10 - this.carDamage;
+        }
+
+        int getPokemonsCount() {
+            return pokemonsCount;
+        }
+
+        int getValue() {
+            return this.value;
+        }
+
+        int getLength() {
+            return this.length;
+        }
+
+        String getName() {
+            return this.name;
+        }
+
+        int getCarDamage() {
+            return carDamage;
+        }
+    }
 }
 
-class Street {
-    private String name;
-    private int pokemonsCount;
-    private int carDamage;
-    private int value;
-    private int length;
-
-    Street(String name, int carDamage, int pokemonsCount, int length) {
-        this.name = name;
-        this.pokemonsCount = pokemonsCount;
-        this.carDamage = carDamage;
-        this.length = length;
-        this.setValue();
-    }
-
-    private void setValue() {
-        this.value = this.pokemonsCount * 10 - this.carDamage;
-    }
-
-    public int getPokemonsCount() {
-        return pokemonsCount;
-    }
-
-    public int getValue() {
-        return this.value;
-    }
-
-    public int getLength() {
-        return this.length;
-    }
-
-    public String getName() {
-        return this.name;
-    }
-
-    public int getCarDamage() {
-        return carDamage;
-    }
-}

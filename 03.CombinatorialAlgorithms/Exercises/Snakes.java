@@ -7,7 +7,6 @@ import java.util.HashSet;
 import java.util.Set;
 
 public class Snakes {
-
     private static Set<String> visited = new HashSet<>();
     private static Set<String> snakes = new HashSet<>();
     private static char[] currentSnake;

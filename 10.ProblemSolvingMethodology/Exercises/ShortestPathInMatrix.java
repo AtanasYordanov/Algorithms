@@ -75,7 +75,7 @@ public class ShortestPathInMatrix {
         return path;
     }
 
-    static class Node implements Comparable<Node> {
+    private static class Node implements Comparable<Node> {
         private int row;
         private int col;
         private int f;
@@ -85,27 +85,23 @@ public class ShortestPathInMatrix {
             this.setCol(col);
         }
 
-        public int getRow() {
+        int getRow() {
             return this.row;
         }
 
-        public void setRow(int row) {
+        void setRow(int row) {
             this.row = row;
         }
 
-        public int getCol() {
+        int getCol() {
             return this.col;
         }
 
-        public void setCol(int col) {
+        void setCol(int col) {
             this.col = col;
         }
 
-        public int getF() {
-            return this.f;
-        }
-
-        public void setF(int f) {
+        void setF(int f) {
             this.f = f;
         }
 

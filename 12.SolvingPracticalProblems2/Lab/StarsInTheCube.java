@@ -14,7 +14,7 @@ public class StarsInTheCube {
         for (int i = 0; i < n; i++) {
             String[] tokens = reader.readLine().split(" \\| ");
             for (int j = 0; j < n; j++) {
-                String[] cells  = tokens[j].split(" ");
+                String[] cells = tokens[j].split(" ");
                 for (int k = 0; k < n; k++) {
                     cube[j][i][k] = cells[k].charAt(0);
                 }
@@ -28,7 +28,7 @@ public class StarsInTheCube {
                     char centerChar = cube[i][j][k];
                     if (cube[i + 1][j][k] == centerChar && cube[i - 1][j][k] == centerChar
                             && cube[i][j + 1][k] == centerChar && cube[i][j - 1][k] == centerChar
-                            && cube[i][j][k + 1] == centerChar && cube[i][j][k - 1] == centerChar){
+                            && cube[i][j][k + 1] == centerChar && cube[i][j][k - 1] == centerChar) {
                         totalCount++;
                         starsPerChar.putIfAbsent(centerChar, 0);
                         starsPerChar.put(centerChar, starsPerChar.get(centerChar) + 1);

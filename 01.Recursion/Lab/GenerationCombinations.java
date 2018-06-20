@@ -29,8 +29,8 @@ public class GenerationCombinations {
     }
 
     private static void printVector(int[] vector) {
-        for (int i = 0; i < vector.length; i++) {
-            System.out.print(vector[i] + " ");
+        for (int num : vector) {
+            System.out.print(num + " ");
         }
         System.out.println();
     }

@@ -11,13 +11,13 @@ public class GroupPermutations {
     private static StringBuilder sb = new StringBuilder();
 
     public static void main(String[] args) throws IOException {
-        Map<Character, Integer> occurences = getOccurences();
+        Map<Character, Integer> occurences = getOccurrences();
         initializeElements(occurences);
         generatePermutations(0);
         System.out.print(sb);
     }
 
-    private static Map<Character, Integer> getOccurences() throws IOException {
+    private static Map<Character, Integer> getOccurrences() throws IOException {
         BufferedReader reader = new BufferedReader(new InputStreamReader(System.in));
         Map<Character, Integer> occurences = new LinkedHashMap<>();
         char[] input = reader.readLine().toCharArray();

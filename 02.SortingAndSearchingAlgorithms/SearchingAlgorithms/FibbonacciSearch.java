@@ -26,11 +26,9 @@ public class FibbonacciSearch {
                 fibPrev = fibNext - fibCrnt;
             } else return mid;
         }
-
         if (fibCrnt != 0 && offset + 1 < nums.size() && nums.get(offset + 1) == key) {
             return offset + 1;
         }
-
         return -1;
     }
 }

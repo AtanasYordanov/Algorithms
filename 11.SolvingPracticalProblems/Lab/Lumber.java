@@ -45,17 +45,17 @@ public class Lumber {
     }
 
     private static int[] findConnectedComponents(Collection<Log> values, Map<Log, List<Log>> graph) {
-        int[] logsComponents= new int[graph.size()];
+        int[] logsComponents = new int[graph.size()];
         int component = 0;
         Set<Log> visited = new HashSet<>();
         for (Log log : values) {
-            if (!visited.contains(log)){
+            if (!visited.contains(log)) {
                 component++;
                 Deque<Log> queue = new ArrayDeque<>();
                 queue.offer(log);
                 while (!queue.isEmpty()) {
                     Log currentLog = queue.poll();
-                    if (logsComponents[currentLog.getId()] == 0){
+                    if (logsComponents[currentLog.getId()] == 0) {
                         logsComponents[currentLog.getId()] = component;
                         for (Log child : graph.get(currentLog)) {
                             queue.offer(child);
@@ -71,29 +71,29 @@ public class Lumber {
     private static boolean areConnected(Log log1, Log log2, int[] logsComponents) {
         return logsComponents[log1.getId()] == logsComponents[log2.getId()];
     }
-}
 
-class Log {
-    private int id;
-    private int x1;
-    private int y1;
-    private int x2;
-    private int y2;
+    private static class Log {
+        private int id;
+        private int x1;
+        private int y1;
+        private int x2;
+        private int y2;
 
-    Log(int id, int x1, int y1, int x2, int y2) {
-        this.id = id;
-        this.x1 = x1;
-        this.y1 = y1;
-        this.x2 = x2;
-        this.y2 = y2;
-    }
+        Log(int id, int x1, int y1, int x2, int y2) {
+            this.id = id;
+            this.x1 = x1;
+            this.y1 = y1;
+            this.x2 = x2;
+            this.y2 = y2;
+        }
 
-    public int getId() {
-        return id;
-    }
+        int getId() {
+            return id;
+        }
 
-    public boolean touches(Log other) {
-        return this.x1 <= other.x2 && other.x1 <= this.x2 &&
-                this.y1 >= other.y2 && other.y1 >= this.y2;
+        boolean touches(Log other) {
+            return this.x1 <= other.x2 && other.x1 <= this.x2 &&
+                    this.y1 >= other.y2 && other.y1 >= this.y2;
+        }
     }
 }

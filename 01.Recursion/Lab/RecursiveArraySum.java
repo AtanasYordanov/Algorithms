@@ -12,7 +12,7 @@ public class RecursiveArraySum {
         System.out.println(getArraySum(nums, 0));
     }
 
-    public static int getArraySum(int[] nums, int fromIndex) {
+    private static int getArraySum(int[] nums, int fromIndex) {
         if (fromIndex == nums.length - 1) {
             return nums[fromIndex];
         }

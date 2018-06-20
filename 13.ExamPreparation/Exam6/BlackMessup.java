@@ -96,11 +96,11 @@ public class BlackMessup {
             this.decay = decay;
         }
 
-        public int getMass() {
+        int getMass() {
             return mass;
         }
 
-        public int getDecay() {
+        int getDecay() {
             return decay;
         }
 

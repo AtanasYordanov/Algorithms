@@ -5,7 +5,6 @@ import java.util.Comparator;
 import java.util.List;
 
 public class KruskalAlgorithm {
-
     public static List<Edge> kruskal(int numberOfVertices, List<Edge> edges) {
         edges.sort(Comparator.naturalOrder());
         int[] parent = new int[numberOfVertices];
@@ -24,7 +23,7 @@ public class KruskalAlgorithm {
         return spanningTree;
     }
 
-    public static int findRoot(int node, int[] parent) {
+    private static int findRoot(int node, int[] parent) {
         int root = node;
         while (parent[root] != root) {
             root = parent[root];

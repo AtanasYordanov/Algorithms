@@ -24,8 +24,8 @@ public class p01_sumOfCoins {
 
     public static Map<Integer, Integer> chooseCoins(int[] elements, int targetSum) {
         SortedSet<Integer> coins = new TreeSet<>(Comparator.reverseOrder());
-        for (int i = 0; i < elements.length; i++) {
-            coins.add(elements[i]);
+        for (int element : elements) {
+            coins.add(element);
         }
         Map<Integer, Integer> usedCoins = new TreeMap<>(Comparator.reverseOrder());
         for (Integer coin : coins) {

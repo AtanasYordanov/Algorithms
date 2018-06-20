@@ -3,7 +3,7 @@ package SortingAndSearchingAlgorithms.SearchingAlgorithms;
 public class InterpolationSearch {
     private static int[] sorted = null;
 
-    public static final int find(int value, int[] array) {
+    public static int find(int value, int[] array) {
         InterpolationSearch.sorted = array;
         try {
             return recursiveFind(value, 0, InterpolationSearch.sorted.length - 1);

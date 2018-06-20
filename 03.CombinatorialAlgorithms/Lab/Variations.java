@@ -28,8 +28,8 @@ public class Variations {
     }
 
     private static void print(int[] vector) {
-        for (int i = 0; i < vector.length; i++) {
-            System.out.print(elements[vector[i]] + " ");
+        for (int index : vector) {
+            System.out.print(elements[index] + " ");
         }
         System.out.println();
     }

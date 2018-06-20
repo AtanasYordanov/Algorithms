@@ -80,7 +80,7 @@ class Process implements Comparable<Process> {
     private int value;
     private int deadline;
 
-    public Process(int index, int value, int deadline) {
+    Process(int index, int value, int deadline) {
         this.index = index;
         this.value = value;
         this.deadline = deadline;

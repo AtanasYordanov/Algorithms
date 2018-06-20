@@ -38,6 +38,12 @@ public class Cubes {
         }
     }
 
+    private static void swap(int i, int j) {
+        String temp = cube[i];
+        cube[i] = cube[j];
+        cube[j] = temp;
+    }
+
     private static void addAllRotations() {
         for (int i = 0; i < 4; i++) {
             for (int j = 0; j < 4; j++) {
@@ -61,12 +67,6 @@ public class Cubes {
             used.add(rotation);
             rotateHorizontal();
         }
-    }
-
-    private static void swap(int i, int j) {
-        String temp = cube[i];
-        cube[i] = cube[j];
-        cube[j] = temp;
     }
 
     private static void rotateHorizontal() {

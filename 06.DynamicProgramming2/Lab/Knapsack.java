@@ -14,9 +14,8 @@ public class Knapsack {
     public static void main(String[] args) throws IOException {
         BufferedReader reader = new BufferedReader(new InputStreamReader(System.in));
         int capacity = Integer.parseInt(reader.readLine());
-        String input;
-        while (!"end".equals(input = reader.readLine())) {
-            String[] tokens = input.split(" ");
+        for (String line = reader.readLine(); !line.equals("end"); line = reader.readLine()) {
+            String[] tokens = line.split(" ");
             String name = tokens[0];
             int weight = Integer.parseInt(tokens[1]);
             int value = Integer.parseInt(tokens[2]);
@@ -84,28 +83,28 @@ public class Knapsack {
         }
         return takenItems;
     }
-}
 
-class Item {
-    private String name;
-    private int weight;
-    private int value;
+    private static class Item {
+        private String name;
+        private int weight;
+        private int value;
 
-    Item(String name, int weight, int value) {
-        this.name = name;
-        this.weight = weight;
-        this.value = value;
-    }
+        Item(String name, int weight, int value) {
+            this.name = name;
+            this.weight = weight;
+            this.value = value;
+        }
 
-    String getName() {
-        return name;
-    }
+        String getName() {
+            return name;
+        }
 
-    int getWeight() {
-        return weight;
-    }
+        int getWeight() {
+            return weight;
+        }
 
-    int getValue() {
-        return value;
+        int getValue() {
+            return value;
+        }
     }
 }

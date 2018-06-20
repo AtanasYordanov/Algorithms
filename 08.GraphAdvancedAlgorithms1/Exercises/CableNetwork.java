@@ -1,4 +1,4 @@
-package GraphAdvancedAlgorithms1.Exercises.CableNetwork;
+package GraphAdvancedAlgorithms1.Exercises;
 
 import java.io.BufferedReader;
 import java.io.IOException;
@@ -27,7 +27,7 @@ public class CableNetwork {
             if (spanningTree.contains(edge.getFirstVertex()) && spanningTree.contains(edge.getSecondVertex())) {
                 continue;
             }
-            if (totalCost + edge.getCost() > budget){
+            if (totalCost + edge.getCost() > budget) {
                 break;
             }
             totalCost += edge.getCost();
@@ -83,28 +83,28 @@ public class CableNetwork {
             }
         }
     }
-}
 
-class Edge {
-    private int firstVertex;
-    private int secondVertex;
-    private int cost;
+    private static class Edge {
+        private int firstVertex;
+        private int secondVertex;
+        private int cost;
 
-    public Edge(int from, int to, int cost) {
-        this.firstVertex = from;
-        this.secondVertex = to;
-        this.cost = cost;
-    }
+        Edge(int from, int to, int cost) {
+            this.firstVertex = from;
+            this.secondVertex = to;
+            this.cost = cost;
+        }
 
-    public int getFirstVertex() {
-        return firstVertex;
-    }
+        int getFirstVertex() {
+            return firstVertex;
+        }
 
-    public int getSecondVertex() {
-        return secondVertex;
-    }
+        int getSecondVertex() {
+            return secondVertex;
+        }
 
-    public int getCost() {
-        return cost;
+        int getCost() {
+            return cost;
+        }
     }
 }

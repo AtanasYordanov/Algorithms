@@ -20,8 +20,8 @@ public class SumTo13 {
     }
 
     private static void trySum(int index, int sum) {
-        if (index == 3){
-            if (sum == 13){
+        if (index == 3) {
+            if (sum == 13) {
                 canBeSummed = true;
             }
             return;

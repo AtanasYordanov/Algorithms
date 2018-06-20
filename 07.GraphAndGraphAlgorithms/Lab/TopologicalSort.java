@@ -34,7 +34,7 @@ public class TopologicalSort {
         return predecessorCount;
     }
 
-    public static Collection<String> topSort(Map<String, List<String>> graph) {
+    private static Collection<String> topSort(Map<String, List<String>> graph) {
         Map<String, Integer> predecessorCount = getPredecessorCount(graph);
         List<String> list = new ArrayList<>();
         Optional<String> vertex = predecessorCount.entrySet().stream()

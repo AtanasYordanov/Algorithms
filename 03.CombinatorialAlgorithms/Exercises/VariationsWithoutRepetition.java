@@ -17,13 +17,12 @@ public class VariationsWithoutRepetition {
         generateRecursive(elements, slots, 0);
     }
 
-    public static void generateRecursive(String[] elements, int slots, int index) {
+    private static void generateRecursive(String[] elements, int slots, int index) {
         if (index >= slots) {
             printRecursive(used);
             return;
         }
-        for (int i = 0; i < elements.length; i++) {
-            String element = elements[i];
+        for (String element : elements) {
             if (!used.contains(element)) {
                 used.add(element);
                 generateRecursive(elements, slots, index + 1);
@@ -32,7 +31,7 @@ public class VariationsWithoutRepetition {
         }
     }
 
-    public static void generateIterative(String[] elements, int slots) {
+    private static void generateIterative(String[] elements, int slots) {
         int[] vector = new int[slots];
         while (true) {
             printIterative(elements, vector);
@@ -52,8 +51,8 @@ public class VariationsWithoutRepetition {
 
     private static void printIterative(String[] elements, int[] vector) {
         StringBuilder sb = new StringBuilder();
-        for (int i = 0; i < vector.length; i++) {
-            sb.append(elements[vector[i]]).append(" ");
+        for (int index : vector) {
+            sb.append(elements[index]).append(" ");
         }
         System.out.println(sb);
     }

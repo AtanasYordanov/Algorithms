@@ -3,7 +3,6 @@ package GraphAdvancedAlgorithms1.Dijkstra;
 import java.util.*;
 
 public class Dijkstra {
-
     public static List<Integer> dijkstraAlgorithm(int[][] graph, int sourceNode, int destinationNode) {
         int[] distance = new int[graph.length];
         int[] prev = new int[graph.length];
@@ -15,7 +14,7 @@ public class Dijkstra {
         PriorityQueue<Integer> queue = new PriorityQueue<>(Comparator.comparing(i -> distance[i]));
         queue.offer(sourceNode);
         while (!queue.isEmpty()) {
-            Integer vertex = queue.poll();
+            int vertex = queue.poll();
             for (int i = 0; i < graph.length; i++) {
                 int distanceToChild = graph[vertex][i];
                 int totalDistance = distance[vertex] + distanceToChild;

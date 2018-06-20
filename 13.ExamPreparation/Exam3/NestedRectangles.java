@@ -65,9 +65,8 @@ public class NestedRectangles {
 
     private static void readRectangles() throws IOException {
         BufferedReader reader = new BufferedReader(new InputStreamReader(System.in));
-        String input;
-        while (!"End".equals(input = reader.readLine())) {
-            String[] tokens = input.split(": | ");
+        for (String line = reader.readLine(); !line.equals("End"); line = reader.readLine()) {
+            String[] tokens = line.split(": | ");
             String name = tokens[0];
             int x1 = Integer.parseInt(tokens[1]);
             int y1 = Integer.parseInt(tokens[2]);
@@ -118,43 +117,43 @@ public class NestedRectangles {
             this.next = null;
         }
 
-        public String getName() {
+        String getName() {
             return this.name;
         }
 
-        public void setNext(Rectangle next) {
+        void setNext(Rectangle next) {
             this.next = next;
         }
 
-        public int getX1() {
+        int getX1() {
             return this.x1;
         }
 
-        public int getY1() {
+        int getY1() {
             return this.y1;
         }
 
-        public int getX2() {
+        int getX2() {
             return this.x2;
         }
 
-        public int getY2() {
+        int getY2() {
             return this.y2;
         }
 
-        public Rectangle getNext() {
+        Rectangle getNext() {
             return this.next;
         }
 
-        public int getLayers() {
+        int getLayers() {
             return this.layers;
         }
 
-        public void setLayers(int layers) {
+        void setLayers(int layers) {
             this.layers = layers;
         }
 
-        public boolean isNestedIn(Rectangle other) {
+        boolean isNestedIn(Rectangle other) {
             return this.x1 >= other.x1 && this.y1 <= other.y1 && this.y2 >= other.y2;
         }
     }

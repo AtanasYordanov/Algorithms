@@ -38,7 +38,7 @@ public class ModifiedKruskalAlgorithm {
         return parents;
     }
 
-    public static int findRoot(int node, int[] parent) {
+    private static int findRoot(int node, int[] parent) {
         int root = node;
         while (parent[root] != root) {
             root = parent[root];
@@ -69,28 +69,28 @@ public class ModifiedKruskalAlgorithm {
             edges.add(edge);
         }
     }
-}
 
-class Edge {
-    private int firstVertex;
-    private int secondVertex;
-    private int cost;
+    private static class Edge {
+        private int firstVertex;
+        private int secondVertex;
+        private int cost;
 
-    public Edge(int from, int to, int cost) {
-        this.firstVertex = from;
-        this.secondVertex = to;
-        this.cost = cost;
-    }
+        Edge(int from, int to, int cost) {
+            this.firstVertex = from;
+            this.secondVertex = to;
+            this.cost = cost;
+        }
 
-    public int getFirstVertex() {
-        return firstVertex;
-    }
+        int getFirstVertex() {
+            return firstVertex;
+        }
 
-    public int getSecondVertex() {
-        return secondVertex;
-    }
+        int getSecondVertex() {
+            return secondVertex;
+        }
 
-    public int getCost() {
-        return cost;
+        int getCost() {
+            return cost;
+        }
     }
 }

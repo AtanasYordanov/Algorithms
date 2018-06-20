@@ -24,7 +24,7 @@ public class Words {
         for (Character ch : elements) {
             uniqueElements.add(ch);
         }
-        if (elements.length == uniqueElements.size()) {
+        if (elements.length == uniqueElements.size()){
             System.out.println(factorial(elements.length));
             return true;
         }

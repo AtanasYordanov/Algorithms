@@ -17,33 +17,33 @@ public class Guitar {
         int initialVolume = Integer.parseInt(reader.readLine());
         int max = Integer.parseInt(reader.readLine());
         //solveSubsetSum(intervals, initialVolume, max);
-        solveDP(intervals, initialVolume, max);
+        System.out.println(solveDP(intervals, initialVolume, max));
     }
 
-    private static void solveDP(int[] intervals, int initialVolume, int maxVolumeAllowed) {
+    private static int solveDP(int[] intervals, int initialVolume, int maxVolumeAllowed) {
         boolean[][] matrix = new boolean[intervals.length + 1][maxVolumeAllowed + 1];
         matrix[0][initialVolume] = true;
         for (int row = 1; row < matrix.length; row++) {
             int interval = intervals[row - 1];
             for (int col = 0; col < matrix[row].length; col++) {
-                if (matrix[row - 1][col]){
-                    if (col - interval >= 0){
+                if (matrix[row - 1][col]) {
+                    if (col - interval >= 0) {
                         matrix[row][col - interval] = true;
                     }
-                    if (col + interval <= maxVolumeAllowed){
+                    if (col + interval <= maxVolumeAllowed) {
                         matrix[row][col + interval] = true;
                     }
                 }
             }
         }
         int bestSum = -1;
-        for (int col = matrix[0].length - 1; col >= 0 ; col--) {
-            if (matrix[intervals.length][col]){
+        for (int col = matrix[0].length - 1; col >= 0; col--) {
+            if (matrix[intervals.length][col]) {
                 bestSum = col;
                 break;
             }
         }
-        System.out.println(bestSum);
+        return bestSum;
     }
 
     private static void solveSubsetSum(int[] intervals, int initialVolume, int max) {
@@ -71,7 +71,7 @@ public class Guitar {
         }
         int bestSum = -1;
         for (Integer sum : previousStepSums) {
-            if (sum > bestSum){
+            if (sum > bestSum) {
                 bestSum = sum;
             }
         }

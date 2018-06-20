@@ -16,24 +16,12 @@ public class Edge implements Comparable<Edge> {
         return this.startNode;
     }
 
-    public void setStartNode(int startNode) {
-        this.startNode = startNode;
-    }
-
     public int getEndNode() {
         return this.endNode;
     }
 
-    public void setEndNode(int endNode) {
-        this.endNode = endNode;
-    }
-
     public int getWeight() {
         return this.weight;
-    }
-
-    public void setWeight(int weight) {
-        this.weight = weight;
     }
 
     @Override

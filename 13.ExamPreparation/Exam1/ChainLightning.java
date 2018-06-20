@@ -119,11 +119,11 @@ public class ChainLightning {
             this.distance = weight;
         }
 
-        public int getFrom() {
+        int getFrom() {
             return from;
         }
 
-        public int getTo() {
+        int getTo() {
             return to;
         }
 

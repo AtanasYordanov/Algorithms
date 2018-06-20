@@ -71,46 +71,46 @@ public class ParkingZones {
         System.out.printf("Zone Type: %s; X: %d; Y: %d; Price: %.2f%n",
                 bestZone, bestX, bestY, bestCost);
     }
-}
 
-class Zone {
-    private String name;
-    private int x1;
-    private int y1;
-    private int x2;
-    private int y2;
-    private double pricePerMinute;
+    private static class Zone {
+        private String name;
+        private int x1;
+        private int y1;
+        private int x2;
+        private int y2;
+        private double pricePerMinute;
 
-    Zone(String name, int x1, int y1, int x2, int y2, double pricePerMinute) {
-        this.name = name;
-        this.x1 = x1;
-        this.y1 = y1;
-        this.x2 = x2;
-        this.y2 = y2;
-        this.pricePerMinute = pricePerMinute;
-    }
+        Zone(String name, int x1, int y1, int x2, int y2, double pricePerMinute) {
+            this.name = name;
+            this.x1 = x1;
+            this.y1 = y1;
+            this.x2 = x2;
+            this.y2 = y2;
+            this.pricePerMinute = pricePerMinute;
+        }
 
-    public String getName() {
-        return name;
-    }
+        String getName() {
+            return name;
+        }
 
-    public int getX1() {
-        return x1;
-    }
+        int getX1() {
+            return x1;
+        }
 
-    public int getY1() {
-        return y1;
-    }
+        int getY1() {
+            return y1;
+        }
 
-    public int getX2() {
-        return x2;
-    }
+        int getX2() {
+            return x2;
+        }
 
-    public int getY2() {
-        return y2;
-    }
+        int getY2() {
+            return y2;
+        }
 
-    public double getPricePerMinute() {
-        return pricePerMinute;
+        double getPricePerMinute() {
+            return pricePerMinute;
+        }
     }
 }

@@ -13,7 +13,7 @@ public class VariationsWithRepetition {
         iterative(elements, slots);
     }
 
-    public static void iterative(String[] elements, int slots) {
+    private static void iterative(String[] elements, int slots) {
         int k = slots;
         int[] vector = new int[k];
         while (true) {
@@ -33,8 +33,8 @@ public class VariationsWithRepetition {
     }
 
     private static void print(String[] elements, int[] vector) {
-        for (int i = 0; i < vector.length; i++) {
-            System.out.print(elements[vector[i]] + " ");
+        for (int index : vector) {
+            System.out.print(elements[index] + " ");
         }
         System.out.println();
     }

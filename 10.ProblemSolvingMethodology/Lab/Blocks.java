@@ -36,8 +36,7 @@ public class Blocks {
             }
             return;
         }
-        for (int i = 0; i < elements.length; i++) {
-            char element = elements[i];
+        for (char element : elements) {
             if (!used.contains(element)) {
                 used.add(element);
                 block[index] = element;

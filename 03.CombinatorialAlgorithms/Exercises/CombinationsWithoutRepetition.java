@@ -34,8 +34,8 @@ public class CombinationsWithoutRepetition {
     }
 
     private static void print(String[] elements, int[] vector) {
-        for (int i = 0; i < vector.length; i++) {
-            System.out.print(elements[vector[i]] + " ");
+        for (int index : vector) {
+            System.out.print(elements[index] + " ");
         }
         System.out.println();
     }

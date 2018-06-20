@@ -20,7 +20,7 @@ public class InversionCount {
         return nums;
     }
 
-    static int mergeSort(int arr[], int temp[], int left, int right) {
+    private static int mergeSort(int arr[], int temp[], int left, int right) {
         int mid, invCount = 0;
         if (right > left) {
             mid = (right + left) / 2;
@@ -31,7 +31,7 @@ public class InversionCount {
         return invCount;
     }
 
-    static int merge(int arr[], int temp[], int left, int mid, int right) {
+    private static int merge(int arr[], int temp[], int left, int mid, int right) {
         int i, j, k;
         int invCount = 0;
         i = left;

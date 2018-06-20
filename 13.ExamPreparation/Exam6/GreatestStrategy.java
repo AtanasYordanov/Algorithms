@@ -24,6 +24,7 @@ public class GreatestStrategy {
         System.out.println(maxValue);
     }
 
+    @SuppressWarnings("unchecked")
     private static void initializeGraph(BufferedReader reader, int areas, int connections) throws IOException {
         String[] tokens;
         graph = new HashSet[areas + 1];
